@@ -53,11 +53,16 @@ const Dashboard = () => {
   return (
     <section className="container">
       <h1 className="large text-primary">Following</h1>
-      <div className="posts">
+      {allTweets.length>0 && <div className="posts">
         {allTweets.map((tweet) => (
           <TweetItem key={tweet._id} post={tweet} isFollowing={() => find(tweet.user)} following={setFollows}/>
         ))}
-      </div>
+      </div>}
+      {allTweets.length===0 && <div className="posts notweets">
+        <h5>No Tweets To show</h5>
+        <h4>Start Following Click on All Tweets</h4>
+        <h5>to see all Tweets and Follow</h5>
+      </div>}
     </section>
   );
 };
