@@ -4,7 +4,7 @@ import { LOGOUT } from '../actions/types';
 
 // Create an instance of axios
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://minitwitter-oyfe.onrender.com/api',
   headers: {
     'Content-Type': 'application/json'
   }
