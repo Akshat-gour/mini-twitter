@@ -23,11 +23,16 @@ const MyTweets = () => {
 
   return (
     <section className="container">
-      <div className="posts">
+      {myposts.length>0 && <div className="posts">
         {myposts.map((post) => (
           <MyTweetsItem key={post._id} post={post} />
         ))}
-      </div>
+      </div>}
+      {myposts.length===0 && <div className="posts notweets">
+        <h5>No Tweets To show</h5>
+        <h4>Tweet by Clicking on Tweet</h4>
+        <h5>to make Tweets</h5>
+      </div>}
       </section>
   );
 };
